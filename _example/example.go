@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
-	"github.com/mattn/go-xmpp"
+	"github.com/kolesa-team/go-xmpp"
 	"log"
 	"os"
 	"strings"

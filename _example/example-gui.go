@@ -3,7 +3,7 @@ package main
 import (
 	"crypto/tls"
 	"github.com/mattn/go-gtk/gtk"
-	"github.com/mattn/go-xmpp"
+	"github.com/kolesa-team/go-xmpp"
 	"log"
 	"os"
 	"strings"
