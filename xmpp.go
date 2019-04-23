@@ -31,8 +31,6 @@ import (
 	"os"
 	"strings"
 	"time"
-
-	"github.com/kolesa-team/goautosocket"
 )
 
 const (
@@ -119,13 +117,10 @@ func connect(host, user, passwd string) (net.Conn, error) {
 		}
 	}
 
-	c, err := gas.Dial("tcp", addr)
+	c, err := net.Dial("tcp", addr)
 	if err != nil {
 		return nil, err
 	}
-
-	c.(*gas.TCPClient).SetKeepAlive(true)
-	c.(*gas.TCPClient).SetKeepAlivePeriod(30 * time.Second)
 
 	if proxy != "" {
 		fmt.Fprintf(c, "CONNECT %s HTTP/1.1\r\n", host)
